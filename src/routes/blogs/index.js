@@ -3,18 +3,17 @@ import { Link } from 'preact-router';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import style from './style';
 
-const inventory = (props) => {
+const blogs = (props) => {
 	const [data, isLoading] = usePrerenderData(props);
-	console.log(data)
 	return (
 		<div class={style.pageBlogs}>
-			<h1 class={style.pageTitle}>Inventario</h1>
-			{ getInventory(data, isLoading) }
+			<h1 class={style.pageTitle}>My Blogs</h1>
+			{ getBlogsListing(data, isLoading) }
 		</div>
 	);
 };
 
-function getInventory(data, isLoading) {
+function getBlogsListing(data, isLoading) {
 	if (isLoading) {
 		return (
 			<article class={style.loadingPlaceholder}>
@@ -49,4 +48,4 @@ function getInventory(data, isLoading) {
 	}
 }
 
-export default inventory;
+export default blogs;

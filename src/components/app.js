@@ -5,7 +5,7 @@ import Header from './header';
 
 // Code-splitting is automated for routes
 import Home from '../routes/home';
-import Inventory from '../routes/inventory';
+import Blogs from '../routes/blogs';
 import Blog from '../routes/blog';
 import Contact from '../routes/contact';
 import ContactSuccess from '../routes/contact-success';
@@ -28,10 +28,10 @@ export default class App extends Component {
 					<Header />
 					<Router onChange={this.handleRoute}>
 						<Home path="/" />
-						<Inventory path="/inventario/" />
+						<Blogs path="/blogs/" />
 						<Blog path="/blog/:name" />
-						<Contact path="/contacto/" />
-						<ContactSuccess path="/contacto/correcto" />
+						<Contact path="/contact/" />
+						<ContactSuccess path="/contact/success" />
 						<NotFoundPage type="404" default />
 					</Router>
 				</div>
