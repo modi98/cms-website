@@ -17,39 +17,27 @@ const Home = () => {
 	},[]);
 
 	return (
-		<div class={style.home}>
-			<div class={style.about}>
-				<div class={style.imageContainer}>
-					<div class={style.image} />
-				</div>
-				<div class={style.quote}>
-					<div class={style.details}>
-						Jane presents traditional spanish art with a modern twist. Her work is
-						excellent quality, her technique is brilliant and her love of the
-						subject matter shines through.
+		<div>
+			<div id="logo-carousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img style={{maxHeight: "70vh", objectFit: "cover"}} src="https://picsum.photos/2000" class="d-block w-100" />
 					</div>
-					<div class={style.author}>- The Local Newspaper</div>
+					<div class="carousel-item">
+						<img style={{maxHeight: "70vh", objectFit: "cover"}} src="https://picsum.photos/2000" class="d-block w-100" />
+					</div>
+					<div class="carousel-item">
+						<img style={{maxHeight: "70vh", objectFit: "cover"}} src="https://picsum.photos/2000" class="d-block w-100" />
+					</div>
 				</div>
-			</div>
-			<div class={style.bio}>
-				<p class={style.bioleft}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-					culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-				<p class={style.bioright}>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-					accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-					ab illo inventore veritatis et quasi architecto beatae vitae dicta
-					sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-					aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-					qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-					dolorem ipsum quia dolor sit amet, consectetur.
-				</p>
+				<button class="carousel-control-prev" type="button" data-bs-target="#logo-carousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#logo-carousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
 			</div>
 		</div>
 	);
