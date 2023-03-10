@@ -1,3 +1,8 @@
 .caruosel-image {
 	max-height: 70vh;
 }
+
+.row {
+	margin-top: 10px !important;
+	display: inline-block;
+}
