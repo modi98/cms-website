@@ -2,7 +2,6 @@ import { useEffect } from "preact/hooks";
 import ItemCard from "../../components/itemCard";
 import CarouselComponent from "../../components/carousel";
 import SearchBar from "../../components/searchBar";
-import style from './style';
 
 const Home = () => {
   /**
