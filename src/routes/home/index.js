@@ -1,6 +1,8 @@
 import { useEffect } from "preact/hooks";
 import ItemCard from "../../components/itemCard";
 import CarouselComponent from "../../components/carousel";
+import SearchBar from "../../components/searchBar";
+import style from './style';
 
 const Home = () => {
   /**
@@ -29,11 +31,24 @@ const Home = () => {
 
   return (
     <div>
-      <CarouselComponent images={carouselImages} />
-      <div>
-        <ItemCard title={"Test"} description={"This is a test"} />
-        <ItemCard title={"Test"} description={"This is a test"} />
-        <ItemCard title={"Test"} description={"This is a test"} />
+      <div className="mb-2">
+        <CarouselComponent images={carouselImages} />
+      </div>
+      
+      <div className="mb-2">
+        <SearchBar />
+      </div>
+
+      <div className="d-flex justify-content-evenly flex-wrap mb-2">
+        <div className="m-2">
+          <ItemCard title={"Test"} description={"This is a test"} />
+        </div>
+        <div className="m-2">
+          <ItemCard title={"Test"} description={"This is a test"} />
+        </div>
+        <div className="m-2">
+          <ItemCard title={"Test"} description={"This is a test"} />
+        </div>
       </div>
     </div>
   );
