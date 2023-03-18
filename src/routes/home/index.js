@@ -24,9 +24,9 @@ const Home = () => {
   }, []);
 
   const carouselImages = [
-    "https://picsum.photos/2000/800",
-    "https://picsum.photos/2000/800",
-    "https://picsum.photos/2000/800",
+    "https://picsum.photos/2000/801",
+    "https://picsum.photos/2000/802",
+    "https://picsum.photos/2000/803",
   ];
 
   return (
@@ -47,13 +47,13 @@ const Home = () => {
 
       <div className="d-flex justify-content-evenly flex-wrap mb-2">
         <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} />
+          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/801"} />
         </div>
         <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} />
+          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/802"} />
         </div>
         <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} />
+          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
         </div>
       </div>
     </div>
