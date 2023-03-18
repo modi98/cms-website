@@ -21,16 +21,20 @@ const Home = () => {
     }
   }, []);
 
-	const carouselImages = [
-		'https://picsum.photos/2000/800',
-		'https://picsum.photos/2000/800',
-		'https://picsum.photos/2000/800',
-	]
+  const carouselImages = [
+    "https://picsum.photos/2000/800",
+    "https://picsum.photos/2000/800",
+    "https://picsum.photos/2000/800",
+  ];
 
   return (
     <div>
-			<CarouselComponent images={carouselImages} />
-      <ItemCard title={"Test"} description={"This is a test"} />
+      <CarouselComponent images={carouselImages} />
+      <div>
+        <ItemCard title={"Test"} description={"This is a test"} />
+        <ItemCard title={"Test"} description={"This is a test"} />
+        <ItemCard title={"Test"} description={"This is a test"} />
+      </div>
     </div>
   );
 };
