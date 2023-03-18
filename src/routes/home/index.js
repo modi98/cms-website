@@ -2,6 +2,7 @@ import { useEffect } from "preact/hooks";
 import ItemCard from "../../components/itemCard";
 import CarouselComponent from "../../components/carousel";
 import SearchBar from "../../components/searchBar";
+import ItemButton from "../../components/button"
 
 const Home = () => {
   /**
@@ -34,8 +35,14 @@ const Home = () => {
         <CarouselComponent images={carouselImages} />
       </div>
       
-      <div className="mb-2">
-        <SearchBar />
+      <div className="mb-2 d-flex">
+        <div className="p-2 flex-grow-1">
+          <SearchBar />
+        </div>
+        <div className="p-2">
+          <ItemButton tittle={"Buscar"} />
+        </div>
+        
       </div>
 
       <div className="d-flex justify-content-evenly flex-wrap mb-2">
