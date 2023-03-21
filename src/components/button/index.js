@@ -1,11 +1,10 @@
 import Button from 'react-bootstrap/Button';
 
-const ItemButton = ({tittle}) => {
+const ItemButton = ({title}) => {
   return (
     <div>
-      <Button variant="outline-primary">{tittle}</Button>{' '}
+      <Button variant="primary" type='submit'>{title}</Button>
     </div>
-    
   );
 };
 

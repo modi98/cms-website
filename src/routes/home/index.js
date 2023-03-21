@@ -40,7 +40,7 @@ const Home = () => {
           <SearchBar />
         </div>
         <div className="p-2">
-          <ItemButton tittle={"Buscar"} />
+          <ItemButton title={"Buscar"} />
         </div>
         
       </div>
