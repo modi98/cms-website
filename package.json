@@ -44,7 +44,8 @@
     "preact-cli-plugin-netlify": "^1.6.0",
     "preact-render-to-string": "^5.1.10",
     "preact-router": "^3.0.1",
-    "react-bootstrap": "^2.7.2"
+    "react-bootstrap": "^2.7.2",
+    "react-markdown": "^8.0.6"
   },
   "jest": {
     "preset": "jest-preset-preact"
