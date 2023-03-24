@@ -1,15 +1,21 @@
-import { h } from 'preact';
-import { Suspense } from 'preact/compat';
-import { usePrerenderData } from '@preact/prerender-data-provider';
+import { h } from "preact";
+import { usePrerenderData } from "@preact/prerender-data-provider";
+import ItemCard from '../../components/itemCard';
 
 const Products = (props) => {
   const [data, isLoading] = usePrerenderData(props);
-  if (!isLoading) console.log(data);
+  console.log(data)
   return (
     <div>
-      Hello
+      {!isLoading && data ? (
+        <>
+          {data.data.edges.map((product) => (
+            <ItemCard title={product.details.title} description={product.details.description} image={product.details.image} />
+          ))}
+        </>
+      ) : null}
     </div>
-  );
+  )
 };
 
 export default Products;
