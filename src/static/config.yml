@@ -14,7 +14,8 @@ collections:
       - { label: "Publish date", name: "date", widget: "datetime" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "markdown"}
-  - name: "category"
+      - { label: "Category", name: "category", widget: "relation", collection: "categories", value_field: "title", search_fields: ["title"]}
+  - name: "categories"
     label: "Categories"
     label_singular: "category" # Used in the UI, ie: "New Post"
     folder: "content/categories"
@@ -22,5 +23,3 @@ collections:
     fields:
       - { label: "title", name: "title", widget: "string"}
       - { label: "Publish date", name: "date", widget: "datetime" }
-
-
