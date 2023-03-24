@@ -3,7 +3,7 @@ const { join } = require('path');
 const fs = require('fs');
 const parseMD = require('parse-md').default;
 
-const [_, products] = generateFileList(join(__dirname, 'content')).nodes;
+const [categories, images, products] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
 	const pages = [
 		{
@@ -19,7 +19,8 @@ module.exports = () => {
 	// adding products list posts page
 	pages.push({
 		url: '/products/',
-		data: products
+		products: products,
+		categories: categories,
 	});
 
 	return pages;
