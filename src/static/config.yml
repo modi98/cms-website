@@ -5,8 +5,8 @@ media_folder: src/assets
 public_folder: /assets
 collections:
   - name: "products"
-    label: "Product"
-    label_singular: "products" # Used in the UI, ie: "New Post"
+    label: "Products"
+    label_singular: "product" # Used in the UI, ie: "New Post"
     folder: "content/products"
     create: true
     fields:
