@@ -74,7 +74,6 @@ const Products = (props) => {
               </option>
             ))}
           </Form.Select>
-          {searchInput}
           <div className="products-container mt-2">
             {products.map((product) => (
               <ItemCard
