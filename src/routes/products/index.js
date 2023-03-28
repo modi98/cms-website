@@ -29,13 +29,15 @@ const Products = (props) => {
               <option value={category.details.title}>{category.details.title}</option>
             ))}
           </Form.Select>
-          {products.map((product) => (
-            <ItemCard
-              title={product.details.title}
-              description={product.details.description}
-              image={product.details.image}
-            />
-          ))}
+          <div className="products-container mt-2">
+            {products.map((product) => (
+              <ItemCard
+                title={product.details.title}
+                description={product.details.description}
+                image={product.details.image}
+              />
+            ))}
+          </div>
         </>
       ) : null}
     </div>

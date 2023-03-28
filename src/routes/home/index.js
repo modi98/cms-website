@@ -45,12 +45,18 @@ const Home = () => {
         
       </div>
 
-      <div className="d-flex justify-content-evenly flex-wrap mb-2">
+      <div className="products-container mb-2">
         <div className="m-2">
           <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/801"} />
         </div>
         <div className="m-2">
           <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/802"} />
+        </div>
+        <div className="m-2">
+          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
+        </div>
+        <div className="m-2">
+          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
         </div>
         <div className="m-2">
           <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
