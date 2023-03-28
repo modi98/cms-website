@@ -42,7 +42,6 @@ const Home = () => {
         <div className="p-2">
           <ItemButton title={"Buscar"} />
         </div>
-        
       </div>
 
       <div className="products-container mb-2">
