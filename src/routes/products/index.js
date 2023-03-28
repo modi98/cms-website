@@ -8,9 +8,6 @@ import ItemButton from "../../components/button";
 
 const filterBySearch = (search, data) => {
   const regex = /[*#_\n]/g;
-  data.forEach((element) => {
-    console.log(element.details.description.replace(regex, "").toLowerCase());
-  });
   return data.filter(
     (product) =>
       product.details.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -67,7 +64,7 @@ const Products = (props) => {
             className="filter-box"
             onChange={(e) => {
               setCategoryInput(e.currentTarget.value);
-              filterProducts(searchInput, categoryInput);
+              filterProducts(searchInput, e.currentTarget.value);
             }}
           >
             <option value=""></option>
