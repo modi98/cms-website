@@ -16,6 +16,12 @@ module.exports = () => {
 
 	// adding products list posts page
 	pages.push({
+		url: '/',
+		products: products,
+		categories: categories,
+	});
+
+	pages.push({
 		url: '/products/',
 		products: products,
 		categories: categories,

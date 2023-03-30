@@ -1,14 +1,18 @@
+import { usePrerenderData } from "@preact/prerender-data-provider";
 import { useEffect } from "preact/hooks";
-import ItemCard from "../../components/itemCard";
+import ItemButton from "../../components/button";
 import CarouselComponent from "../../components/carousel";
+import ItemCard from "../../components/itemCard";
 import SearchBar from "../../components/searchBar";
-import ItemButton from "../../components/button"
+import ProductsComponent from "../../components/searchProducts";
 
-const Home = () => {
+const Home = (props) => {
   /**
    * Netlify CMS's accept invite link land on home page.
    * This redirection takes it to the right place(/admin).
    */
+  const [data, isLoading] = usePrerenderData(props);
+  console.log(data);
 
   useEffect(() => {
     if (
@@ -34,33 +38,8 @@ const Home = () => {
       <div className="mb-2">
         <CarouselComponent images={carouselImages} />
       </div>
-      
-      <div className="mb-2 d-flex">
-        <div className="p-2 flex-grow-1">
-          <SearchBar />
-        </div>
-        <div className="p-2">
-          <ItemButton title={"Buscar"} />
-        </div>
-      </div>
 
-      <div className="products-container mb-2">
-        <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/801"} />
-        </div>
-        <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/802"} />
-        </div>
-        <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
-        </div>
-        <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
-        </div>
-        <div className="m-2">
-          <ItemCard title={"Test"} description={"This is a test"} image={"https://picsum.photos/2000/803"} />
-        </div>
-      </div>
+      { !isLoading && data ? <ProductsComponent data={data} /> : null }
     </div>
   );
 };
