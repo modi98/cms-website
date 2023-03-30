@@ -12,7 +12,6 @@ const Home = (props) => {
    * This redirection takes it to the right place(/admin).
    */
   const [data, isLoading] = usePrerenderData(props);
-  console.log(data);
 
   useEffect(() => {
     if (

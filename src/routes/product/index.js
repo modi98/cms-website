@@ -4,7 +4,6 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 
 const Product = (props) => {
   const [data, isLoading] = usePrerenderData(props);
-	console.log(data)
   return (
     <Container className="mt-5">
       {!isLoading && data ? (
