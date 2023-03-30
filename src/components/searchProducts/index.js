@@ -41,7 +41,7 @@ const ProductsComponent = ({ data }) => {
     setProducts(result);
   };
 
-  return (
+  return data && data.categories && data.products ? (
     <div>
       <div className="mb-2 d-flex">
         <div className="py-2 me-2 flex-grow-1">
@@ -80,7 +80,7 @@ const ProductsComponent = ({ data }) => {
         ))}
       </div>
     </div>
-  );
+  ) : <></>;
 };
 
 export default ProductsComponent;
