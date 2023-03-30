@@ -81,6 +81,7 @@ const Products = (props) => {
                   title={product.details.title}
                   description={product.details.description}
                   image={product.details.image}
+                  itemLink={`/product/${product.id}`}
                 />
               ))}
             </div>

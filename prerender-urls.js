@@ -1,7 +1,5 @@
 const { generateFileList } = require('./src/crawler');
 const { join } = require('path');
-const fs = require('fs');
-const parseMD = require('parse-md').default;
 
 const [categories, images, products] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
@@ -22,6 +20,14 @@ module.exports = () => {
 		products: products,
 		categories: categories,
 	});
+
+	pages.push(...products.edges.map(product => {
+		return {
+			url: `/product/${product.id}`,
+			seo: product.details,
+			data: product
+		};
+	}));
 
 	return pages;
 };

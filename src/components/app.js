@@ -1,14 +1,15 @@
-import { h, Component } from 'preact';
-import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
+import { Component, h } from 'preact';
+import { Router } from 'preact-router';
 import Header from './header';
 
 // Code-splitting is automated for routes
-import Home from '../routes/home';
-import Products from '../routes/products';
 import Contact from '../routes/contact';
 import ContactSuccess from '../routes/contact-success';
+import Home from '../routes/home';
 import NotFoundPage from '../routes/notfound';
+import Product from '../routes/product';
+import Products from '../routes/products';
 
 export default class App extends Component {
 
@@ -28,6 +29,7 @@ export default class App extends Component {
 					<Router onChange={this.handleRoute}>
 						<Home path="/" />
 						<Products path="/products/" />
+						<Product path="/product/:name" />
 						<Contact path="/contact/" />
 						<ContactSuccess path="/contact/success" />
 						<NotFoundPage type="404" default />
