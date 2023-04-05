@@ -1,5 +1,5 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import { Col, Container, Row } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import ItemButton from "../../components/button";
 
 const contactForm = () => {
@@ -8,10 +8,13 @@ const contactForm = () => {
       <Row>
         <Col md={6}>
           <h2>Información de contacto</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non ipsum est.
-            Nulla ac massa a erat rutrum tincidunt. Nam ultrices eleifend suscipit.
-            Etiam consequat, dui eu bibendum hendrerit, mi purus lobortis diam, sit amet
-            congue arcu turpis ac ipsum. Suspendisse non commodo leo, vel congue turpis.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non
+            ipsum est. Nulla ac massa a erat rutrum tincidunt. Nam ultrices
+            eleifend suscipit. Etiam consequat, dui eu bibendum hendrerit, mi
+            purus lobortis diam, sit amet congue arcu turpis ac ipsum.
+            Suspendisse non commodo leo, vel congue turpis.
+          </p>
         </Col>
         <Col md={6}>
           <Form>
@@ -30,6 +33,6 @@ const contactForm = () => {
       </Row>
     </Container>
   );
-}
+};
 
 export default contactForm;
