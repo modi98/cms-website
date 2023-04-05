@@ -9,7 +9,11 @@ const Product = (props) => {
       {!isLoading && data ? (
         <Row>
           <Col md={6}>
-            <Image src={data.data.details.image} alt={data.data.details.title} fluid />
+            <Image
+              src={data.data.details.image}
+              alt={data.data.details.title}
+              fluid
+            />
           </Col>
           <Col md={6}>
             <h1>{data.data.details.title}</h1>

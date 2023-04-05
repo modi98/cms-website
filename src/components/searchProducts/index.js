@@ -18,8 +18,9 @@ const ProductsComponent = ({ data }) => {
           .toLowerCase()
           .replace(regex, "")
           .replace(/\s/g, "")
-          .indexOf(search.toLowerCase().replace(regex, "").replace(/\s/g, "")) >=
-          0
+          .indexOf(
+            search.toLowerCase().replace(regex, "").replace(/\s/g, "")
+          ) >= 0
     );
   };
 
@@ -80,7 +81,9 @@ const ProductsComponent = ({ data }) => {
         ))}
       </div>
     </div>
-  ) : <></>;
+  ) : (
+    <></>
+  );
 };
 
 export default ProductsComponent;

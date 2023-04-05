@@ -38,7 +38,7 @@ const Home = (props) => {
         <CarouselComponent images={carouselImages} />
       </div>
 
-      { !isLoading && data ? <ProductsComponent data={data} /> : null }
+      {!isLoading && data ? <ProductsComponent data={data} /> : null}
     </div>
   );
 };

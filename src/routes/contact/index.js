@@ -1,11 +1,11 @@
-import ContactForm from '../../components/contactForm';
+import ContactForm from "../../components/contactForm";
 
 const photographs = (props) => {
-	return (
-		<div>
-			<ContactForm/>
-		</div>
-	);
+  return (
+    <div>
+      <ContactForm />
+    </div>
+  );
 };
 
 export default photographs;
