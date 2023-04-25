@@ -34,7 +34,7 @@ module.exports = () => {
       return {
         url: `/product/${product.id}`,
         seo: product.details,
-        data: product,
+        product: product,
       };
     })
   );

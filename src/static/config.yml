@@ -24,7 +24,7 @@ collections:
         }
       - { label: "Year", name: "year", widget: "string" }
       - { label: "Manufacturer", name: "manufacturer", widget: "string" }
-      - { label: "Modelo", name: "modelo", widget: "string" }
+      - { label: "Model", name: "model", widget: "string" }
       - { label: "VIN", name: "vin", widget: "string" }
       - { label: "Condition", name: "condition", widget: "string" }
       - { label: "Stock Number", name: "stockNum", widget: "string" }
@@ -34,7 +34,7 @@ collections:
           widget: "string",
         }
       - { label: "Fuel Type", name: "fuel", widget: "string" }
-      - { label: "Turbo", name: "cantidad", widget: "string" }
+      - { label: "Turbo", name: "turbo", widget: "string" }
       - { label: "transmission", name: "transmission", widget: "string" }
       - {
           label: "Steering Wheel Location",

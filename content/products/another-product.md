@@ -7,13 +7,13 @@ description: CAMION CON CAJA SECA CHEVROLET 3500 CON MOTOR DIESEL GMC 6.5,
 category: Cat 2
 year: "2001"
 manufacturer: CHEVROLET
-modelo: "3500"
+model: "3500"
 vin: 1GBJG31F211213990
 condition: Usado
 stockNum: "16691"
 engineDisplacement: 6,500 Cc
 fuel: Diesel
-cantidad: Sí
+turbo: Sí
 transmission: 4x2
 steeringWheel: Lado Izquierdo
 ---
