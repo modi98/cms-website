@@ -71,14 +71,18 @@ const ProductsComponent = ({ data }) => {
         ))}
       </Form.Select>
       <div className="products-container mt-2">
-        {products.map((product) => (
-          <ItemCard
-            title={product.details.title}
-            description={product.details.description}
-            image={product.details.image}
-            itemLink={`/product/${product.id}`}
-          />
-        ))}
+        {products.length ? (
+          products.map((product) => (
+            <ItemCard
+              title={product.details.title}
+              description={product.details.description}
+              image={product.details.image}
+              itemLink={`/product/${product.id}`}
+            />
+          ))
+        ) : (
+          <div>No hay productos</div>
+        )}
       </div>
     </div>
   ) : (
