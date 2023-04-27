@@ -2,6 +2,7 @@ import { h } from "preact";
 import { usePrerenderData } from "@preact/prerender-data-provider";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import ItemButton from "../../components/button";
+import ItemModal from "../../components/itemModal";
 import Specs from "./specs";
 
 const Product = (props) => {
@@ -21,7 +22,7 @@ const Product = (props) => {
             <Col md={6}>
               <h1>{data.product.details.title}</h1>
               <p><strong>Precio:</strong> $16,700.00</p>
-              <ItemButton title={"Hacer una oferta"} />
+              <ItemModal title={"Hacer una oferta"} productName={data.product.details.title} />
               <h3>Información de contacto</h3>
               <p><strong>Locación:</strong> Monterrey, NL</p>
               <p><strong>Teléfono:</strong> 81 4038 2839</p>

@@ -2,6 +2,7 @@ import { Provider } from "@preact/prerender-data-provider";
 import { Component, h } from "preact";
 import { Router } from "preact-router";
 import Header from "./header";
+import Footer from "./footer";
 
 // Code-splitting is automated for routes
 import Contact from "../routes/contact";
@@ -33,6 +34,7 @@ export default class App extends Component {
             <ContactSuccess path="/contact/success" />
             <NotFoundPage type="404" default />
           </Router>
+          <Footer/>
         </div>
       </Provider>
     );
