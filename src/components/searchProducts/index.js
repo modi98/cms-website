@@ -1,8 +1,10 @@
-import ItemCard from "../../components/itemCard";
-import Form from "react-bootstrap/Form";
 import { useState } from "preact/hooks";
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Form from "react-bootstrap/Form";
+import Row from 'react-bootstrap/Row';
+import ItemCard from "../../components/itemCard";
 import SearchBar from "../../components/searchBar";
-import ItemButton from "../../components/button";
 
 const ProductsComponent = ({ data }) => {
   const [products, setProducts] = useState(data?.products?.edges);
@@ -44,32 +46,34 @@ const ProductsComponent = ({ data }) => {
 
   return data && data.categories && data.products ? (
     <div>
-      <div className="mb-2 d-flex">
-        <div className="py-2 me-2 flex-grow-1">
-          <SearchBar
-            searchInput={searchInput}
-            setSearchInput={searchProducts}
-          />
-        </div>
-        <div className="py-2">
-          <ItemButton title={"Buscar"} />
-        </div>
+      <div className="mt-4">
+        <Row>
+          <Col className="mt-auto d-flex">
+            <div className="me-2 flex-grow-1">
+              <SearchBar
+                searchInput={searchInput}
+                setSearchInput={searchProducts}
+              />
+            </div>
+          </Col>
+          <Col>
+            <Form.Select
+              className="filter-box"
+              onChange={(e) => {
+                setCategoryInput(e.currentTarget.value);
+                filterProducts(searchInput, e.currentTarget.value);
+              }}
+            >
+              <option value="">Categorías</option>
+              {data.categories.edges.map((category) => (
+                <option value={category.details.title}>
+                  {category.details.title}
+                </option>
+              ))}
+            </Form.Select>
+          </Col>
+        </Row>
       </div>
-      Filtro:{" "}
-      <Form.Select
-        className="filter-box"
-        onChange={(e) => {
-          setCategoryInput(e.currentTarget.value);
-          filterProducts(searchInput, e.currentTarget.value);
-        }}
-      >
-        <option value=""></option>
-        {data.categories.edges.map((category) => (
-          <option value={category.details.title}>
-            {category.details.title}
-          </option>
-        ))}
-      </Form.Select>
       <div className="products-container mt-2">
         {products.length ? (
           products.map((product) => (

@@ -59,14 +59,15 @@ a {
 
 .products-container {
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   gap: 10px;
 }
 
 .card-image-container {
-  height: 200px;
+  height: 350px;
   object-fit: cover;
+  width: 100%;
 }
 
 .filter-box {
