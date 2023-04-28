@@ -6,6 +6,7 @@ import ItemCard from "../../components/itemCard";
 import SearchBar from "../../components/searchBar";
 import ProductsComponent from "../../components/searchProducts";
 
+
 const Home = (props) => {
   /**
    * Netlify CMS's accept invite link land on home page.
@@ -39,6 +40,7 @@ const Home = (props) => {
       </div>
 
       {!isLoading && data ? <ProductsComponent data={data} /> : null}
+      
     </div>
   );
 };
