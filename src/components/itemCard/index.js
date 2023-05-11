@@ -18,7 +18,7 @@ const ItemCard = ({ title, description, image, itemLink, contact }) => {
             </Card.Text>
             <div className="my-3">
               <Card.Title>Información de contacto</Card.Title>
-              <div><strong>Locación:</strong> Monterrey, NL</div>
+              <div><strong>Ubicación:</strong> Monterrey, NL</div>
               <div><strong>Teléfono:</strong><a href="#">81 4038 2839</a></div>
               <div><strong>Correo:</strong><a href="mailto:someone@example.com"> someone@example.com</a></div>
             </div>

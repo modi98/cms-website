@@ -24,7 +24,7 @@ const Product = (props) => {
               <p><strong>Precio:</strong> $16,700.00</p>
               <ItemModal title={"Hacer una oferta"} productName={data.product.details.title} />
               <h3>Información de contacto</h3>
-              <p><strong>Locación:</strong> Monterrey, NL</p>
+              <p><strong>Ubicación:</strong> Monterrey, NL</p>
               <p><strong>Teléfono:</strong> 81 4038 2839</p>
               <p><strong>WhatsApp:</strong><a href="#"> Mensaje</a></p>
               <p><strong>Correo:</strong><a href="mailto:someone@example.com"> someone@example.com</a></p>
