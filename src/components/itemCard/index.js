@@ -18,9 +18,9 @@ const ItemCard = ({ title, description, image, itemLink, location, phone, email 
             </Card.Text>
             <div className="my-3">
               <Card.Title>Información de contacto</Card.Title>
-              <div><strong>Ubicación:</strong>{location}</div>
-              <div><strong>Teléfono:</strong>{phone}</div>
-              <div><strong>Correo:</strong><a href={`mailto:${email}`}>{email}</a></div>
+              <div><strong>Ubicación: </strong>{location}</div>
+              <div><strong>Teléfono: </strong>{phone}</div>
+              <div><strong>Correo: </strong><a href={`mailto:${email}`}>{email}</a></div>
             </div>
             <Button variant="primary">
               <Link href={itemLink} style={{ color: "white" }}>

@@ -82,6 +82,9 @@ const ProductsComponent = ({ data }) => {
               description={product.details.description}
               image={product.details.image}
               itemLink={`/product/${product.id}`}
+              location={product.location}
+              phone={product.phone}
+              email={product.email}
             />
           ))
         ) : (
