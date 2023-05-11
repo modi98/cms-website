@@ -5,6 +5,9 @@ image: https://media.sandhills.com/img.axd?id=8021430243&wid=4078149815&rwl=Fals
 description: CAMION CON CAJA SECA CHEVROLET 3500 CON MOTOR DIESEL GMC 6.5,
   TRANSMISION AUTOMATICA ALLISON, LLANTAS 22575R16
 category: Cat 2
+location: El Paso, Texas 79903
+phone: +52 625 100 1010
+email: test@gmail.com
 year: "2001"
 manufacturer: CHEVROLET
 model: "3500"
