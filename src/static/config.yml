@@ -54,5 +54,6 @@ collections:
     folder: "content/categories"
     create: true
     fields:
-      - { label: "title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Publish date", name: "date", widget: "datetime" }
