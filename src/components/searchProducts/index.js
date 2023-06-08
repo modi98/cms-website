@@ -42,6 +42,7 @@ const ProductsComponent = ({ data }) => {
     setProducts(result);
   };
 
+
   return data && data.categories && data.products ? (
     <div>
       <div className="mb-2 d-flex">
@@ -82,7 +83,7 @@ const ProductsComponent = ({ data }) => {
           ))
         ) : (
           <div>No hay productos</div>
-        )}
+        )} 
       </div>
     </div>
   ) : (
