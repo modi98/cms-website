@@ -23,7 +23,8 @@ collections:
           search_fields: ["title"],
         }
       - { label: "Location", name: "location", widget: "string" }
-      - { label: "Phone", name: "phone", widget: "string" }
+      - { label: "Está en México?", name: "inMx", widget: "boolean", required: false }
+      - { label: "Está en Estados Unidos?", name: "inUs", widget: "boolean", required: false }
       - { label: "Email", name: "email", widget: "string" }
       - { label: "Year", name: "year", widget: "string", required: false }
       - { label: "Manufacturer", name: "manufacturer", widget: "string", required: false }
