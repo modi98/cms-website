@@ -101,8 +101,8 @@ const ProductsComponent = ({ data }) => {
       <Row>
         <Col className="mt-4" xs={3}>
           <ProductFilters
-            condition={data.filters.condition}
-            manufacturers={data.filters.manufacturers}
+            condition={data?.filters?.condition}
+            manufacturers={data?.filters?.manufacturers}
             handleUsFilter={handleUsFilter}
             handleMxFilter={handleMxFilter}
             handleManufacturerFilter={handleManufacturerFilter}
@@ -112,7 +112,7 @@ const ProductsComponent = ({ data }) => {
         </Col>
         <Col>
           <div className="products-container">
-            {products.length ? (
+            {products?.length ? (
               products.map((product) => (
                 <ItemCard
                   title={product.details.title}
