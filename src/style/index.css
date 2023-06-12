@@ -96,3 +96,17 @@ a {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
+.buttons-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+
+.category-container {
+  justify-content: space-around; 
+  flex-wrap:wrap ; 
+  display: flex;
+  gap: 10px;
+}

@@ -1,9 +1,8 @@
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ItemCard from "../itemCard";
 import ProductFilters from "../productFilters";
-import { useEffect } from "react";
 
 const ProductsComponent = ({ data }) => {
   const [products, setProducts] = useState(data.products);
