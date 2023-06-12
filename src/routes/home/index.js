@@ -38,9 +38,6 @@ const Home = (props) => {
       <div className="mb-2">
         <CarouselComponent images={carouselImages} />
       </div>
-
-      {!isLoading && data ? <ProductsComponent data={data} /> : null}
-      
     </div>
   );
 };

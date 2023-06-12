@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Courgette&text=Jane%20Doe");
 
+:root {
+  --primary-color: #00993d;
+  --primary-color-darken: #00702d;
+}
+
 html,
 body {
   height: 100%;
@@ -72,4 +77,22 @@ a {
 
 .filter-box {
   max-width: 200px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: var(--bs-btn-border-width) solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-darken);
+}
+
+.btn-primary:focus {
+  background-color: var(--primary-color-darken);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
