@@ -9,7 +9,6 @@ const CategoryMenu = ({ categories }) => {
   return (
     <div>
       <div className="d-flex" style={{justifyContent: "space-around"}}>
-        {/* Aquí están los botones de las categorias. */}
         <ToggleButtonMenu/>
       </div>
       <div className="mb-5 d-flex">

@@ -5,14 +5,15 @@ import SearchProducts from "../../components/searchProducts";
 
 const Products = (props) => {
   const [data, isLoading] = usePrerenderData(props);
-  console.log(data, isLoading)
   if (!isLoading && data) {
     return <SearchProducts data={data} />;
   }
   return (
-    <Spinner animation="border" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>
+    <div className="spinner-container">
+      <Spinner animation="border" role="status" className="m-auto">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
   );
 };
 

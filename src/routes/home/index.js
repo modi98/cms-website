@@ -24,9 +24,9 @@ const Home = (props) => {
   }, []);
 
   const carouselImages = [
-    "https://picsum.photos/2000/801",
-    "https://picsum.photos/2000/802",
-    "https://picsum.photos/2000/803",
+    "/assets/cover-1.jpg",
+    "/assets/cover-2.webp",
+    "/assets/cover-3.webp",
   ];
 
   return (
@@ -35,7 +35,7 @@ const Home = (props) => {
         <CarouselComponent images={carouselImages} />
       </div>
       
-      { !isLoading && data ? <CategoryMenu categories={data.categories.edges}/> : null}
+      { !isLoading && data ? <CategoryMenu categories={data?.categories?.edges}/> : null}
     </div>
   );
 };

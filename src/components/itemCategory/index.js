@@ -5,7 +5,7 @@ import "./style.css";
 const ItemCategory = ({ categories }) => {
   return (
     <>
-      {categories.map((item, i) => (
+      {categories?.map((item, i) => (
         <Link
           href={`/inventario/${item.details.title
             .replaceAll(" ", "-")
