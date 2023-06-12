@@ -9,7 +9,7 @@ module.exports = () => {
     {
       url: "/",
       seo: {
-        cover: "/assets/profile.jpg",
+        cover: "/assets/loco.png",
       },
     },
     { url: "/contact/" },
@@ -37,7 +37,7 @@ module.exports = () => {
   });
 
   pages.push({
-    url: "/inventario/",
+    url: "/inventario",
     products: products.edges,
     filters: filterData,
   });

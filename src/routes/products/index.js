@@ -5,6 +5,7 @@ import SearchProducts from "../../components/searchProducts";
 
 const Products = (props) => {
   const [data, isLoading] = usePrerenderData(props);
+  console.log(data, isLoading)
   if (!isLoading && data) {
     return <SearchProducts data={data} />;
   }
