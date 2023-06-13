@@ -1,13 +1,12 @@
 import { Form, FormControl } from "react-bootstrap";
 
-const searchBar = ({ searchInput, setSearchInput }) => {
+const searchBar = ({ handleSearch, setSearchInput }) => {
   return (
-    <Form inline>
+    <Form inline onSubmit={handleSearch}>
       <FormControl
         type="text"
         placeholder="Buscar"
         className="mr-sm-2"
-        value={searchInput}
         onChange={setSearchInput}
       />
     </Form>

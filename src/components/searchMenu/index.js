@@ -1,8 +1,18 @@
+import { useState } from "preact/hooks";
+import { route } from "preact-router";
 import ToggleButtonMenu from "../../components/toggleButton";
 import ItemButton from "../../components/button";
 import SearchBar from "../../components/searchBar";
 
 const SearchMenu = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    localStorage.setItem("search", searchInput);
+    route("/inventario");
+  };
+
   return (
     <>
       <div className="d-flex" style={{ justifyContent: "space-around" }}>
@@ -10,10 +20,13 @@ const SearchMenu = () => {
       </div>
       <div className="mb-5 d-flex">
         <div className="py-0 me-2 flex-grow-1">
-          <SearchBar />
+          <SearchBar
+            handleSearch={handleSearch}
+            setSearchInput={(e) => setSearchInput(e.target.value)}
+          />
         </div>
         <div className="py-0">
-          <ItemButton title={"Buscar"} />
+          <ItemButton onClick={handleSearch} title={"Buscar"} />
         </div>
       </div>
     </>

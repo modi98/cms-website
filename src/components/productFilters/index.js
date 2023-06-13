@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { Form, FormControl } from "react-bootstrap";
 
 const ProductFilters = ({
+  searchInputValue,
   country,
   manufacturers,
   condition,
@@ -22,6 +23,7 @@ const ProductFilters = ({
             placeholder="Ingresa palabras clave"
             className="mr-sm-2"
             onChange={handleSearchFilter}
+            value={searchInputValue}
           />
         </ListGroup.Item>
       </ListGroup>

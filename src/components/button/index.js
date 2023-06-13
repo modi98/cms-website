@@ -1,9 +1,9 @@
 import Button from "react-bootstrap/Button";
 
-const ItemButton = ({ title }) => {
+const ItemButton = ({ title, onClick }) => {
   return (
     <div>
-      <Button variant="primary" type="submit">
+      <Button onClick={onClick} variant="primary" type="submit">
         {title}
       </Button>
     </div>

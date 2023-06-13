@@ -13,6 +13,11 @@ const ProductsComponent = ({ data }) => {
   const [manufacturerFilter, setManufacturerFilter] = useState([]);
   const [conditionFilter, setConditionFilter] = useState([]);
 
+  if (typeof window !== "undefined" && localStorage.getItem("search")) {
+    setSearchInput(localStorage.getItem("search"));
+    localStorage.removeItem("search");
+  }
+
   const handleSearchFilter = (e) => {
     setSearchInput(e.target.value);
   };
@@ -98,12 +103,15 @@ const ProductsComponent = ({ data }) => {
 
   return (
     <div>
-      { !data?.filters?.country ? (<Row>
-        <InventoryMeny />
-      </Row>) : null}
+      {!data?.filters?.country ? (
+        <Row>
+          <InventoryMeny />
+        </Row>
+      ) : null}
       <Row>
         <Col className="mt-4" xs={3}>
           <ProductFilters
+            searchInputValue={searchInput}
             country={data?.filters?.country}
             condition={data?.filters?.condition}
             manufacturers={data?.filters?.manufacturers}
