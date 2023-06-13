@@ -39,6 +39,7 @@ module.exports = () => {
   const filterData = {
     condition: {},
     manufacturers: {},
+    country: true,
   };
 
   products.edges.forEach((product) => {
@@ -70,6 +71,7 @@ module.exports = () => {
       const filters = {
         condition: {},
         manufacturers: {},
+        country: true,
       };
 
       filteredProducts.forEach((product) => {
@@ -108,6 +110,70 @@ module.exports = () => {
       return null;
     })
   );
+
+  mxCategories.forEach((category) => {
+    if (!category) return;
+    const filteredProducts = products.edges.filter(
+      (product) => product.details.category === category && product.details.inMx,
+    );
+
+    const filters = {
+      condition: {},
+      manufacturers: {},
+      country: false,
+    };
+
+    filteredProducts.forEach((product) => {
+      if (product.details.condition in filters.condition)
+        filters.condition[product.details.condition] += 1;
+      else filters.condition[product.details.condition] = 1;
+
+      if (product.details.manufacturer in filters.manufacturers)
+        filters.manufacturers[product.details.manufacturer] += 1;
+      else filters.manufacturers[product.details.manufacturer] = 1;
+    });
+
+    pages.push({
+      url: `/mexico/inventario/${category.toLowerCase().replaceAll(" ", "-")}`,
+      products: filteredProducts,
+      filters,
+      seo: {
+        cover: "/assets/logo.png",
+      },
+    });
+  });
+
+  usCategories.forEach((category) => {
+    if (!category) return;
+    const filteredProducts = products.edges.filter(
+      (product) => product.details.category === category && product.details.inUs,
+    );
+
+    const filters = {
+      condition: {},
+      manufacturers: {},
+      country: false,
+    };
+
+    filteredProducts.forEach((product) => {
+      if (product.details.condition in filters.condition)
+        filters.condition[product.details.condition] += 1;
+      else filters.condition[product.details.condition] = 1;
+
+      if (product.details.manufacturer in filters.manufacturers)
+        filters.manufacturers[product.details.manufacturer] += 1;
+      else filters.manufacturers[product.details.manufacturer] = 1;
+    });
+
+    pages.push({
+      url: `/usa/inventario/${category.toLowerCase().replaceAll(" ", "-")}`,
+      products: filteredProducts,
+      filters,
+      seo: {
+        cover: "/assets/logo.png",
+      },
+    });
+  });
 
   pages.push({
     url: "/mexico/",

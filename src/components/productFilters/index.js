@@ -2,7 +2,16 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Form, FormControl } from "react-bootstrap";
 
-const ProductFilters = ({ manufacturers, condition, handleUsFilter, handleMxFilter, handleManufacturerFilter, handleConditionFilter, handleSearchFilter }) => {
+const ProductFilters = ({
+  country,
+  manufacturers,
+  condition,
+  handleUsFilter,
+  handleMxFilter,
+  handleManufacturerFilter,
+  handleConditionFilter,
+  handleSearchFilter,
+}) => {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Header>Búsqueda rápida</Card.Header>
@@ -53,23 +62,27 @@ const ProductFilters = ({ manufacturers, condition, handleUsFilter, handleMxFilt
         </>
       ) : null}
 
-      <Card.Header>País</Card.Header>
-      <ListGroup variant="flush">
-        <ListGroup.Item>
-          <Form.Check
-            type="switch"
-            id="switch-mx"
-            label="México"
-            onChange={handleMxFilter}
-          />
-          <Form.Check
-            type="switch"
-            id="switch-us"
-            label="Estados Unidos"
-            onChange={handleUsFilter}
-          />
-        </ListGroup.Item>
-      </ListGroup>
+      {country ? (
+        <>
+          <Card.Header>País</Card.Header>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              <Form.Check
+                type="switch"
+                id="switch-mx"
+                label="México"
+                onChange={handleMxFilter}
+              />
+              <Form.Check
+                type="switch"
+                id="switch-us"
+                label="Estados Unidos"
+                onChange={handleUsFilter}
+              />
+            </ListGroup.Item>
+          </ListGroup>
+        </>
+      ) : null}
     </Card>
   );
 };

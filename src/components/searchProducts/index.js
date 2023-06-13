@@ -100,6 +100,7 @@ const ProductsComponent = ({ data }) => {
       <Row>
         <Col className="mt-4" xs={3}>
           <ProductFilters
+            country={data?.filters?.country}
             condition={data?.filters?.condition}
             manufacturers={data?.filters?.manufacturers}
             handleUsFilter={handleUsFilter}
