@@ -38,6 +38,14 @@ const Specs = ({ productDetails }) => {
                   <td>{productDetails.model}</td>
                 </tr>
               ) : null}
+              {productDetails.serialNumber ? (
+                <tr>
+                  <td className="w-50" colSpan={2}>
+                    <strong>Número de serie</strong>
+                  </td>
+                  <td>{productDetails.serialNumber}</td>
+                </tr>
+              ) : null}
               {productDetails.vin ? (
                 <tr>
                   <td className="w-50" colSpan={2}>

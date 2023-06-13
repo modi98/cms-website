@@ -22,24 +22,30 @@ collections:
           value_field: "title",
           search_fields: ["title"],
         }
-      - { label: "Year", name: "year", widget: "string" }
-      - { label: "Manufacturer", name: "manufacturer", widget: "string" }
-      - { label: "Model", name: "model", widget: "string" }
-      - { label: "VIN", name: "vin", widget: "string" }
-      - { label: "Condition", name: "condition", widget: "string" }
-      - { label: "Stock Number", name: "stockNum", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Phone", name: "phone", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Year", name: "year", widget: "string", required: false }
+      - { label: "Manufacturer", name: "manufacturer", widget: "string", required: false }
+      - { label: "Model", name: "model", widget: "string", required: false }
+      - { label: "Serial Number", name: "serialNumber", widget: "string", required: false }
+      - { label: "VIN", name: "vin", widget: "string", required: false }
+      - { label: "Condition", name: "condition", widget: "string", required: false }
+      - { label: "Stock Number", name: "stockNum", widget: "string", required: false }
       - {
           label: "Engine Displacement",
           name: "engineDisplacement",
           widget: "string",
+          required: false
         }
-      - { label: "Fuel Type", name: "fuel", widget: "string" }
-      - { label: "Turbo", name: "turbo", widget: "string" }
-      - { label: "transmission", name: "transmission", widget: "string" }
+      - { label: "Fuel Type", name: "fuel", widget: "string", required: false }
+      - { label: "Turbo", name: "turbo", widget: "string", required: false }
+      - { label: "transmission", name: "transmission", widget: "string", required: false }
       - {
           label: "Steering Wheel Location",
           name: "steeringWheel",
           widget: "string",
+          required: false
         }
 
   - name: "categories"
@@ -48,5 +54,6 @@ collections:
     folder: "content/categories"
     create: true
     fields:
-      - { label: "title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Publish date", name: "date", widget: "datetime" }

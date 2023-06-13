@@ -65,8 +65,9 @@ a {
 }
 
 .card-image-container {
-  height: 200px;
+  height: 350px;
   object-fit: cover;
+  width: 100%;
 }
 
 .filter-box {

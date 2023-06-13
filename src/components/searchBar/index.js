@@ -5,7 +5,7 @@ const searchBar = ({ searchInput, setSearchInput }) => {
     <Form inline>
       <FormControl
         type="text"
-        placeholder="Search"
+        placeholder="Buscar"
         className="mr-sm-2"
         value={searchInput}
         onChange={setSearchInput}

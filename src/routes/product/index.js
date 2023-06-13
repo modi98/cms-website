@@ -1,12 +1,12 @@
 import { h } from "preact";
 import { usePrerenderData } from "@preact/prerender-data-provider";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import ItemButton from "../../components/button";
 import ItemModal from "../../components/itemModal";
 import Specs from "./specs";
 
 const Product = (props) => {
   const [data, isLoading] = usePrerenderData(props);
+  console.log(data)
   return (
     <Container className="mt-5">
       {!isLoading && data ? (
@@ -24,10 +24,9 @@ const Product = (props) => {
               <p><strong>Precio:</strong> $16,700.00</p>
               <ItemModal title={"Hacer una oferta"} productName={data.product.details.title} />
               <h3>Información de contacto</h3>
-              <p><strong>Locación:</strong> Monterrey, NL</p>
-              <p><strong>Teléfono:</strong> 81 4038 2839</p>
-              <p><strong>WhatsApp:</strong><a href="#"> Mensaje</a></p>
-              <p><strong>Correo:</strong><a href="mailto:someone@example.com"> someone@example.com</a></p>
+              <div><strong>Ubicación: </strong>{data.product.details.location}</div>
+              <div><strong>Teléfono: </strong>{data.product.details.phone}</div>
+              <div><strong>Correo: </strong><a href={`mailto:${data.product.details.email}`}>{data.product.details.email}</a></div>
             </Col>
           </Row>
           <Row>

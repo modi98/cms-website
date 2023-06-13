@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-const ItemModal = ({ title, productName }) => {
+const ItemModal = ({ title, productName, variant }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-    <div>
-      <Button variant="primary" onClick={handleShow}>
+    <span>
+      <Button variant={variant ? variant : "primary"} onClick={handleShow}>
         {title}
       </Button>
 
@@ -47,6 +47,7 @@ const ItemModal = ({ title, productName }) => {
             >
               <Form.Label>Mensaje</Form.Label>
               <Form.Control as="textarea" rows={3} />
+              <Form.Control hidden value={productName} />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -59,7 +60,7 @@ const ItemModal = ({ title, productName }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </span>
   );
 }
 
