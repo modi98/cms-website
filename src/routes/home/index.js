@@ -1,11 +1,9 @@
 import { usePrerenderData } from "@preact/prerender-data-provider";
 import { useEffect } from "preact/hooks";
-import ItemButton from "../../components/button";
 import CarouselComponent from "../../components/carousel";
-import ItemCard from "../../components/itemCard";
-import SearchBar from "../../components/searchBar";
-import ProductsComponent from "../../components/searchProducts";
 import CategoryMenu from "../../components/categoryMenu";
+import SearchMenu from "../../components/searchMenu";
+import InventoryMeny from "../../components/inventoryMenu";
 
 const Home = (props) => {
   /**
@@ -28,9 +26,9 @@ const Home = (props) => {
   }, []);
 
   const carouselImages = [
-    "https://picsum.photos/2000/801",
-    "https://picsum.photos/2000/802",
-    "https://picsum.photos/2000/803",
+    "/assets/cover-1.jpg",
+    "/assets/cover-2.webp",
+    "/assets/cover-3.webp",
   ];
 
   return (
@@ -38,13 +36,11 @@ const Home = (props) => {
       <div className="mb-2">
         <CarouselComponent images={carouselImages} />
       </div>
-      
-      <CategoryMenu/>
-
-  
-
-      {/* {!isLoading && data ? <ProductsComponent data={data} /> : null} */}
-      
+      <SearchMenu />
+      <InventoryMeny />
+      {!isLoading && data ? (
+        <CategoryMenu categories={data?.categories?.edges} />
+      ) : null}
     </div>
   );
 };

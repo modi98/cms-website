@@ -5,10 +5,10 @@ import style from "./style";
 const Header = () => (
   <header class={style.header}>
     <Link href="/">
-      <h1>Logo</h1>
+      <img style={{height: "100%"}} src="/assets/logo.png" alt="Logo" />
     </Link>
     <nav>
-      <Link activeClassName={style.active} href="/products">
+      <Link activeClassName={style.active} href="/inventario">
         Inventario
       </Link>
       <Link activeClassName={style.active} href="/contact">

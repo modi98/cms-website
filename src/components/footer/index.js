@@ -9,9 +9,9 @@ function Footer() {
             <h4>Contáctanos</h4>
             <p>Envíanos un mensaje para más información.</p>
             <ul className="list-unstyled">
-              <li><i className="fa fa-map-marker"></i> Dirección: Calle Falsa #123, Ciudad, País</li>
-              <li><i className="fa fa-phone"></i> Teléfono: +123 456 789</li>
-              <li><i className="fa fa-envelope"></i> Correo electrónico: info@miempresa.com</li>
+              <li><i className="fa fa-map-marker"></i> Dirección: Av. Dr. Paliza 92, El Centenario, 83260 Hermosillo, Sonora</li>
+              <li><i className="fa fa-phone"></i> Teléfono: (662) 212 4134 / (662) 212 6787</li>
+              <li><i className="fa fa-envelope"></i> Correo electrónico: lestrada@grupo8a.com</li>
             </ul>
           </div>
           <div className="col-md-6">
@@ -25,7 +25,7 @@ function Footer() {
           </div>
         </div>
         <hr />
-        <span className="text-muted">© 2023 Mi Empresa, Todos los derechos reservados</span>
+        <span className="text-muted">2023 La Grande, Todos los derechos reservados</span>
       </div>
     </footer>
   );

@@ -1,100 +1,140 @@
-import { useState } from "preact/hooks";
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Form from "react-bootstrap/Form";
-import Row from 'react-bootstrap/Row';
-import ItemCard from "../../components/itemCard";
-import SearchBar from "../../components/searchBar";
+import { useEffect, useState } from "preact/hooks";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import ItemCard from "../itemCard";
+import ProductFilters from "../productFilters";
+import InventoryMeny from "../inventoryMenu";
 
 const ProductsComponent = ({ data }) => {
-  const [products, setProducts] = useState(data?.products?.edges);
+  const [products, setProducts] = useState(data.products);
   const [searchInput, setSearchInput] = useState("");
-  const [categoryInput, setCategoryInput] = useState("");
+  const [inMexico, setInMexico] = useState(false);
+  const [inUs, setInUs] = useState(false);
+  const [manufacturerFilter, setManufacturerFilter] = useState([]);
+  const [conditionFilter, setConditionFilter] = useState([]);
 
-  const filterBySearch = (search, data) => {
+  const handleSearchFilter = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleMxFilter = () => {
+    setInMexico(!inMexico);
+  };
+
+  const handleUsFilter = () => {
+    setInUs(!inUs);
+  };
+
+  const handleManufacturerFilter = (m) => {
+    const index = manufacturerFilter.indexOf(m);
+    if (index >= 0) {
+      setManufacturerFilter(manufacturerFilter.filter((val) => val !== m));
+      return;
+    }
+    setManufacturerFilter([...manufacturerFilter, m]);
+  };
+
+  const handleConditionFilter = (c) => {
+    const index = conditionFilter.indexOf(c);
+    if (index >= 0) {
+      setConditionFilter(conditionFilter.filter((val) => val !== c));
+      return;
+    }
+    setConditionFilter([...conditionFilter, c]);
+  };
+
+  const filterByCondition = (products) => {
+    if (!conditionFilter.length) return products;
+    return products.filter((product) =>
+      conditionFilter.includes(product.details.condition)
+    );
+  };
+
+  const filterByManufacturer = (products) => {
+    if (!manufacturerFilter.length) return products;
+    return products.filter((product) =>
+      manufacturerFilter.includes(product.details.manufacturer)
+    );
+  };
+
+  const filterByCountry = (products) => {
+    if ((!inMexico && !inUs) || (inMexico && inUs)) {
+      return products;
+    }
+    if (inMexico) return products.filter((product) => product.details.inMx);
+    return products.filter((product) => product.details.inUs);
+  };
+
+  const filterBySearch = (products) => {
     const regex = /[*#_\n]/g;
-    return data.filter(
+    return products.filter(
       (product) =>
-        product.details.title.toLowerCase().includes(search.toLowerCase()) ||
+        product.details.title
+          .toLowerCase()
+          .includes(searchInput.toLowerCase()) ||
         product.details.description
           .toLowerCase()
           .replace(regex, "")
           .replace(/\s/g, "")
           .indexOf(
-            search.toLowerCase().replace(regex, "").replace(/\s/g, "")
+            searchInput.toLowerCase().replace(regex, "").replace(/\s/g, "")
           ) >= 0
     );
   };
 
-  const searchProducts = (e) => {
-    setSearchInput(e.target.value);
-    filterProducts(e.target.value, categoryInput);
+  const runAllFilters = () => {
+    setProducts(
+      filterBySearch(
+        filterByCountry(
+          filterByManufacturer(filterByCondition([...data?.products]))
+        )
+      )
+    );
   };
 
-  const filterProducts = (search, category) => {
-    let newProducts = [];
-    if (category === "") {
-      newProducts = data.products.edges;
-    } else {
-      newProducts = data.products.edges.filter(
-        (product) => product.details.category === category
-      );
-    }
-    const result = filterBySearch(search, newProducts);
-    setProducts(result);
-  };
+  useEffect(() => {
+    runAllFilters();
+  }, [inMexico, inUs, conditionFilter, manufacturerFilter, searchInput]);
 
-
-  return data && data.categories && data.products ? (
+  return (
     <div>
-      <div className="mt-4">
-        <Row>
-          <Col className="mt-auto d-flex">
-            <div className="me-2 flex-grow-1">
-              <SearchBar
-                searchInput={searchInput}
-                setSearchInput={searchProducts}
-              />
-            </div>
-          </Col>
-          <Col>
-            <Form.Select
-              className="filter-box"
-              onChange={(e) => {
-                setCategoryInput(e.currentTarget.value);
-                filterProducts(searchInput, e.currentTarget.value);
-              }}
-            >
-              <option value="">Categorías</option>
-              {data.categories.edges.map((category) => (
-                <option value={category.details.title}>
-                  {category.details.title}
-                </option>
-              ))}
-            </Form.Select>
-          </Col>
-        </Row>
-      </div>
-      <div className="products-container mt-2">
-        {products.length ? (
-          products.map((product) => (
-            <ItemCard
-              title={product.details.title}
-              description={product.details.description}
-              image={product.details.image}
-              itemLink={`/product/${product.id}`}
-              location={product.details.location}
-              phone={product.details.phone}
-              email={product.details.email}
-            />
-          ))
-        ) : (
-          <div>No hay productos</div>
-        )} 
-      </div>
+      { !data?.filters?.country ? (<Row>
+        <InventoryMeny />
+      </Row>) : null}
+      <Row>
+        <Col className="mt-4" xs={3}>
+          <ProductFilters
+            country={data?.filters?.country}
+            condition={data?.filters?.condition}
+            manufacturers={data?.filters?.manufacturers}
+            handleUsFilter={handleUsFilter}
+            handleMxFilter={handleMxFilter}
+            handleManufacturerFilter={handleManufacturerFilter}
+            handleConditionFilter={handleConditionFilter}
+            handleSearchFilter={handleSearchFilter}
+          />
+        </Col>
+        <Col>
+          <div className="products-container">
+            {products?.length ? (
+              products.map((product) => (
+                <ItemCard
+                  title={product.details.title}
+                  description={product.details.description}
+                  image={product.details.image}
+                  itemLink={`/product/${product.id}`}
+                  location={product.details.location}
+                  phone={product.details.phone}
+                  email={product.details.email}
+                />
+              ))
+            ) : (
+              <div>No hay productos</div>
+            )}
+          </div>
+        </Col>
+      </Row>
     </div>
-  ) : (
-    <></>
   );
 };
 

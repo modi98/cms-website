@@ -9,11 +9,21 @@ module.exports = () => {
     {
       url: "/",
       seo: {
-        cover: "/assets/profile.jpg",
+        cover: "/assets/logo.png",
       },
     },
-    { url: "/contact/" },
-    { url: "/contact/success" },
+    {
+      url: "/contact/",
+      seo: {
+        cover: "/assets/logo.png",
+      },
+    },
+    {
+      url: "/contact/success",
+      seo: {
+        cover: "/assets/logo.png",
+      },
+    },
   ];
 
   // adding products list posts page
@@ -21,12 +31,170 @@ module.exports = () => {
     url: "/",
     products: products,
     categories: categories,
+    seo: {
+      cover: "/assets/logo.png",
+    },
+  });
+
+  const filterData = {
+    condition: {},
+    manufacturers: {},
+    country: true,
+  };
+
+  products.edges.forEach((product) => {
+    if (product.details.condition in filterData.condition)
+      filterData.condition[product.details.condition] += 1;
+    else filterData.condition[product.details.condition] = 1;
+
+    if (product.details.manufacturer in filterData.manufacturers)
+      filterData.manufacturers[product.details.manufacturer] += 1;
+    else filterData.manufacturers[product.details.manufacturer] = 1;
   });
 
   pages.push({
-    url: "/products/",
-    products: products,
-    categories: categories,
+    url: "/inventario",
+    products: products.edges,
+    filters: filterData,
+    seo: {
+      cover: "/assets/logo.png",
+    },
+  });
+
+  pages.push(
+    ...categories.edges.map((category) => {
+      const title = category.details.title;
+      const filteredProducts = products.edges.filter(
+        (product) => product.details.category === category.details.title
+      );
+
+      const filters = {
+        condition: {},
+        manufacturers: {},
+        country: true,
+      };
+
+      filteredProducts.forEach((product) => {
+        if (product.details.condition in filters.condition)
+          filters.condition[product.details.condition] += 1;
+        else filters.condition[product.details.condition] = 1;
+
+        if (product.details.manufacturer in filters.manufacturers)
+          filters.manufacturers[product.details.manufacturer] += 1;
+        else filters.manufacturers[product.details.manufacturer] = 1;
+      });
+
+      return {
+        url: `/inventario/${title.toLowerCase().replaceAll(" ", "-")}`,
+        products: products.edges.filter(
+          (product) => product.details.category === category.details.title
+        ),
+        filters,
+        seo: {
+          cover: "/assets/logo.png",
+        },
+      };
+    })
+  );
+
+  const mxCategories = new Set(
+    products.edges.map((product) => {
+      if (product.details.inMx) return product.details.category;
+      return null;
+    })
+  );
+
+  const usCategories = new Set(
+    products.edges.map((product) => {
+      if (product.details.inUs) return product.details.category;
+      return null;
+    })
+  );
+
+  mxCategories.forEach((category) => {
+    if (!category) return;
+    const filteredProducts = products.edges.filter(
+      (product) => product.details.category === category && product.details.inMx,
+    );
+
+    const filters = {
+      condition: {},
+      manufacturers: {},
+      country: false,
+    };
+
+    filteredProducts.forEach((product) => {
+      if (product.details.condition in filters.condition)
+        filters.condition[product.details.condition] += 1;
+      else filters.condition[product.details.condition] = 1;
+
+      if (product.details.manufacturer in filters.manufacturers)
+        filters.manufacturers[product.details.manufacturer] += 1;
+      else filters.manufacturers[product.details.manufacturer] = 1;
+    });
+
+    pages.push({
+      url: `/mexico/inventario/${category.toLowerCase().replaceAll(" ", "-")}`,
+      products: filteredProducts,
+      filters,
+      seo: {
+        cover: "/assets/logo.png",
+      },
+    });
+  });
+
+  usCategories.forEach((category) => {
+    if (!category) return;
+    const filteredProducts = products.edges.filter(
+      (product) => product.details.category === category && product.details.inUs,
+    );
+
+    const filters = {
+      condition: {},
+      manufacturers: {},
+      country: false,
+    };
+
+    filteredProducts.forEach((product) => {
+      if (product.details.condition in filters.condition)
+        filters.condition[product.details.condition] += 1;
+      else filters.condition[product.details.condition] = 1;
+
+      if (product.details.manufacturer in filters.manufacturers)
+        filters.manufacturers[product.details.manufacturer] += 1;
+      else filters.manufacturers[product.details.manufacturer] = 1;
+    });
+
+    pages.push({
+      url: `/usa/inventario/${category.toLowerCase().replaceAll(" ", "-")}`,
+      products: filteredProducts,
+      filters,
+      seo: {
+        cover: "/assets/logo.png",
+      },
+    });
+  });
+
+  pages.push({
+    url: "/mexico/",
+    categories: categories.edges.filter((category) =>
+      mxCategories.has(category.details.title)
+    ),
+    prefix: "/mexico",
+    seo: {
+      cover: "/assets/logo.png",
+    },
+  });
+
+  pages.push({
+    url: "/usa/",
+    categories: categories.edges.filter((category) =>
+      usCategories.has(category.details.title)
+    ),
+    prefix: "/usa",
+    seo: {
+      cover: "/assets/logo.png",
+    },
   });
 
   pages.push(
@@ -35,6 +203,9 @@ module.exports = () => {
         url: `/product/${product.id}`,
         seo: product.details,
         product: product,
+        seo: {
+          cover: "/assets/logo.png",
+        },
       };
     })
   );

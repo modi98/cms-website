@@ -9,11 +9,10 @@ const contactForm = () => {
         <Col md={6}>
           <h2>Información de contacto</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non
-            ipsum est. Nulla ac massa a erat rutrum tincidunt. Nam ultrices
-            eleifend suscipit. Etiam consequat, dui eu bibendum hendrerit, mi
-            purus lobortis diam, sit amet congue arcu turpis ac ipsum.
-            Suspendisse non commodo leo, vel congue turpis.
+            ¡Nos encantaría escuchar de ti!<br/><br/>Si tienes alguna pregunta, inquietud
+            o simplemente quieres obtener más información sobre nuestros
+            productos, no dudes en ponerte en contacto con nosotros. Estamos
+            aquí para ayudarte y responder a todas tus consultas.
           </p>
         </Col>
         <Col md={6}>
