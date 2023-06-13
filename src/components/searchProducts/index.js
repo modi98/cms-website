@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ItemCard from "../itemCard";
 import ProductFilters from "../productFilters";
+import InventoryMeny from "../inventoryMenu";
 
 const ProductsComponent = ({ data }) => {
   const [products, setProducts] = useState(data.products);
@@ -97,6 +98,9 @@ const ProductsComponent = ({ data }) => {
 
   return (
     <div>
+      { !data?.filters?.country ? (<Row>
+        <InventoryMeny />
+      </Row>) : null}
       <Row>
         <Col className="mt-4" xs={3}>
           <ProductFilters
