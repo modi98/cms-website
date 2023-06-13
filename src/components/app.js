@@ -11,6 +11,7 @@ import Home from "../routes/home";
 import NotFoundPage from "../routes/notfound";
 import Product from "../routes/product";
 import Products from "../routes/products";
+import CountryInventory from "../routes/country-inventory";
 
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -30,9 +31,13 @@ export default class App extends Component {
             <Home path="/" />
             <Products path="/inventario/" />
             <Products path="/inventario/:category" />
+            <Products path="/mexico/inventario/:category" />
+            <Products path="/usa/inventario/:category" />
             <Product path="/product/:name" />
             <Contact path="/contact/" />
             <ContactSuccess path="/contact/success" />
+            <CountryInventory path="/mexico/" />
+            <CountryInventory path="/usa/" />
             <NotFoundPage type="404" default />
           </Router>
           <Footer />

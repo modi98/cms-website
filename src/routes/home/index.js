@@ -2,6 +2,8 @@ import { usePrerenderData } from "@preact/prerender-data-provider";
 import { useEffect } from "preact/hooks";
 import CarouselComponent from "../../components/carousel";
 import CategoryMenu from "../../components/categoryMenu";
+import SearchMenu from "../../components/searchMenu";
+import InventoryMeny from "../../components/inventoryMenu";
 
 const Home = (props) => {
   /**
@@ -34,8 +36,11 @@ const Home = (props) => {
       <div className="mb-2">
         <CarouselComponent images={carouselImages} />
       </div>
-      
-      { !isLoading && data ? <CategoryMenu categories={data?.categories?.edges}/> : null}
+      <SearchMenu />
+      <InventoryMeny />
+      {!isLoading && data ? (
+        <CategoryMenu categories={data?.categories?.edges} />
+      ) : null}
     </div>
   );
 };

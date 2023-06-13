@@ -2,12 +2,12 @@ import { Link } from "preact-router/match";
 import React from "react";
 import "./style.css";
 
-const ItemCategory = ({ categories }) => {
+const ItemCategory = ({ prefix, categories }) => {
   return (
     <>
       {categories?.map((item, i) => (
         <Link
-          href={`/inventario/${item.details.title
+          href={`${prefix ? prefix : ''}/inventario/${item.details.title
             .replaceAll(" ", "-")
             .toLowerCase()}`}
         >

@@ -95,6 +95,42 @@ module.exports = () => {
     })
   );
 
+  const mxCategories = new Set(
+    products.edges.map((product) => {
+      if (product.details.inMx) return product.details.category;
+      return null;
+    })
+  );
+
+  const usCategories = new Set(
+    products.edges.map((product) => {
+      if (product.details.inUs) return product.details.category;
+      return null;
+    })
+  );
+
+  pages.push({
+    url: "/mexico/",
+    categories: categories.edges.filter((category) =>
+      mxCategories.has(category.details.title)
+    ),
+    prefix: "/mexico",
+    seo: {
+      cover: "/assets/logo.png",
+    },
+  });
+
+  pages.push({
+    url: "/usa/",
+    categories: categories.edges.filter((category) =>
+      usCategories.has(category.details.title)
+    ),
+    prefix: "/usa",
+    seo: {
+      cover: "/assets/logo.png",
+    },
+  });
+
   pages.push(
     ...products.edges.map((product) => {
       return {
