@@ -13,13 +13,13 @@ module.exports = () => {
       },
     },
     {
-      url: "/contact/",
+      url: "/contacto/",
       seo: {
         cover: "/assets/logo.png",
       },
     },
     {
-      url: "/contact/success",
+      url: "/contacto/success",
       seo: {
         cover: "/assets/logo.png",
       },

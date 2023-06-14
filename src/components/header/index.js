@@ -11,7 +11,7 @@ const Header = () => (
       <Link activeClassName={style.active} href="/inventario">
         Inventario
       </Link>
-      <Link activeClassName={style.active} href="/contact">
+      <Link activeClassName={style.active} href="/contacto">
         Contacto
       </Link>
     </nav>

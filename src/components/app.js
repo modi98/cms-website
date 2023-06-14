@@ -33,7 +33,7 @@ export default class App extends Component {
             <Products path="/inventario/:category" />
             <Products path="/mexico/inventario/:category" />
             <Products path="/usa/inventario/:category" />
-            <Product path="/product/:name" />
+            <Product path="/producto/:name" />
             <Contact path="/contacto/" />
             <ContactSuccess path="/contacto/success" />
             <CountryInventory path="/mexico/" />
