@@ -6,7 +6,7 @@ const InventoryMeny = () => {
     <div className="buttons-container mb-5 d-flex">
       <Link href="/mexico">
         <Button
-          variant="secondary"
+          variant="primary"
           size="lg"
           active
           className="flex-fill"
@@ -17,7 +17,7 @@ const InventoryMeny = () => {
       </Link>
       <Link href="/usa">
         <Button
-          variant="secondary"
+          variant="primary"
           size="lg"
           active
           className="flex-fill"
@@ -28,7 +28,7 @@ const InventoryMeny = () => {
       </Link>
       <Link href="/inventario">
         <Button
-          variant="secondary"
+          variant="primary"
           size="lg"
           active
           className="flex-fill"

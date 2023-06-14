@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ItemButton from "../../components/button";
 import { route } from 'preact-router';
+import SearchMenu from "../../components/searchMenu";
 
 const contactForm = () => {
   emailjs.init("GR5drAbPCu5dZZl06");
@@ -15,21 +16,15 @@ const contactForm = () => {
 
   return (
     <Container>
+      <SearchMenu />
+      <h2 className="mb-4">Sucursal y contacto</h2>
       <Row>
         <Col md={6}>
-          <h2>Información de contacto</h2>
           <p>
-            ¡Nos encantaría escuchar de ti!<br/><br/>Si tienes alguna pregunta, inquietud
-            o simplemente quieres obtener más información sobre nuestros
-            productos, no dudes en ponerte en contacto con nosotros. Estamos
-            aquí para ayudarte y responder a todas tus consultas.
-          </p>
-          <p>
-            {" "}
-            Dirección: Av. Dr. Paliza 92, El Centenario, 83260 Hermosillo,
-            Sonora. <br />
-            Teléfonos: (662) 212 4134 / (662) 212 6787 <br />
-            Correo electrónico: lestrada@grupo8a.com{" "}
+            Si tienes alguna pregunta, inquietud o simplemente quieres obtener
+            más información sobre nuestros productos, no dudes en ponerte en
+            contacto con nosotros. Estamos aquí para ayudarte y responder a
+            todas tus consultas.
           </p>
           <a
             target="_blank"
@@ -41,6 +36,7 @@ const contactForm = () => {
               className="mapa-image mb-5"
             />
           </a>
+          <p> Dirección: Av. Dr. Paliza 92, El Centenario, 83260 Hermosillo, Sonora.  <br/>Teléfonos: (662) 212 4134 / (662) 212 6787  <br/>Correo electrónico: lestrada@grupo8a.com </p>
         </Col>
         <Col md={6}>
           <p>
