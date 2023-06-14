@@ -10,7 +10,7 @@ const ItemModal = ({ title, productName, variant }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
-  emailjs.init("GR5drAbPCu5dZZl06");
+  if (typeof window !== 'undefined') window?.emailjs.init("GR5drAbPCu5dZZl06");
 
   const sendEmail = async (e) => {
     e.preventDefault();
