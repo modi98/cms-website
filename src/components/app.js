@@ -34,8 +34,8 @@ export default class App extends Component {
             <Products path="/mexico/inventario/:category" />
             <Products path="/usa/inventario/:category" />
             <Product path="/product/:name" />
-            <Contact path="/contact/" />
-            <ContactSuccess path="/contact/success" />
+            <Contact path="/contacto/" />
+            <ContactSuccess path="/contacto/success" />
             <CountryInventory path="/mexico/" />
             <CountryInventory path="/usa/" />
             <NotFoundPage type="404" default />

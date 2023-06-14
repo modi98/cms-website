@@ -200,7 +200,7 @@ module.exports = () => {
   pages.push(
     ...products.edges.map((product) => {
       return {
-        url: `/product/${product.id}`,
+        url: `/producto/${product.id}`,
         seo: product.details,
         product: product,
         seo: {

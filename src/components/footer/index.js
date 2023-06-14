@@ -10,8 +10,8 @@ function Footer() {
             <p>Envíanos un mensaje para más información.</p>
             <ul className="list-unstyled">
               <li><i className="fa fa-map-marker"></i> Dirección: Av. Dr. Paliza 92, El Centenario, 83260 Hermosillo, Sonora</li>
-              <li><i className="fa fa-phone"></i> Teléfono: (662) 212 4134 / (662) 212 6787</li>
-              <li><i className="fa fa-envelope"></i> Correo electrónico: lestrada@grupo8a.com</li>
+              <li><i className="fa fa-phone"></i> Teléfono: (+52) 662-127-0112 / (+52) 662-127-0112</li>
+              <li><i className="fa fa-envelope"></i> Correo electrónico: <a href="mailto:rochoa@grupo8a.com">rochoa@grupo8a.com</a></li>
             </ul>
           </div>
           <div className="col-md-6">
@@ -19,8 +19,7 @@ function Footer() {
             <p>Síguenos en nuestras redes sociales para mantenerte informado.</p>
             <ul className="list-unstyled">
               <li><a href="#"><i className="fa fa-facebook"></i> Facebook</a></li>
-              <li><a href="#"><i className="fa fa-twitter"></i> Twitter</a></li>
-              <li><a href="#"><i className="fa fa-instagram"></i> Instagram</a></li>
+              <li><a target="_blank" href="https://www.instagram.com/lagrandeconstructionc/?igshid=MzRlODBiNWFlZA%3D%3D"><i className="fa fa-instagram"></i> Instagram</a></li>
             </ul>
           </div>
         </div>

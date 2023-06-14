@@ -1,12 +1,12 @@
 import { h } from "preact";
 import style from "./style";
 
-const photographs = (props) => {
+const ContactSuccess = (props) => {
   return (
     <div class={style.pageContact}>
-      <h1 class={style.pageTitle}>Thanks! I'll be in touch soon.</h1>
+      <h1 class={style.pageTitle}>Gracias! Estaremos en contacto contigo pronto.</h1>
     </div>
   );
 };
 
-export default photographs;
+export default ContactSuccess;

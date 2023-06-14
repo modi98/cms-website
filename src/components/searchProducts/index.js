@@ -122,7 +122,7 @@ const ProductsComponent = ({ data }) => {
                   title={product.details.title}
                   description={product.details.description}
                   image={product.details.image}
-                  itemLink={`/product/${product.id}`}
+                  itemLink={`/producto/${product.id}`}
                   location={product.details.location}
                   phone={product.details.phone}
                   email={product.details.email}
