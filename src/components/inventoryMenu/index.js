@@ -23,7 +23,7 @@ const InventoryMeny = () => {
           className="flex-fill"
           style={{ marginRight: "5px" }}
         >
-          INVENTARIO EL PASO TEXAS
+          INVENTARIO USA
         </Button>
       </Link>
       <Link href="/inventario">
