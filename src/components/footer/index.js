@@ -18,7 +18,7 @@ function Footer() {
             <h4>Síguenos</h4>
             <p>Síguenos en nuestras redes sociales para mantenerte informado.</p>
             <ul className="list-unstyled">
-              <li><a href="#"><i className="fa fa-facebook"></i> Facebook</a></li>
+              <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100076299096800&mibextid=LQQJ4d"><i className="fa fa-facebook"></i> Facebook</a></li>
               <li><a target="_blank" href="https://www.instagram.com/lagrandeconstructionc/?igshid=MzRlODBiNWFlZA%3D%3D"><i className="fa fa-instagram"></i> Instagram</a></li>
             </ul>
           </div>

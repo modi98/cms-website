@@ -14,7 +14,7 @@ const ProductFilters = ({
   handleSearchFilter,
 }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem", height: 'fit-content', marginBottom: '15px' }}>
       <Card.Header>Búsqueda rápida</Card.Header>
       <ListGroup variant="flush">
         <ListGroup.Item>

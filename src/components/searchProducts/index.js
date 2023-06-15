@@ -108,40 +108,36 @@ const ProductsComponent = ({ data }) => {
           <InventoryMeny />
         </Row>
       ) : null}
-      <Row>
-        <Col className="mt-4" xs={3}>
-          <ProductFilters
-            searchInputValue={searchInput}
-            country={data?.filters?.country}
-            condition={data?.filters?.condition}
-            manufacturers={data?.filters?.manufacturers}
-            handleUsFilter={handleUsFilter}
-            handleMxFilter={handleMxFilter}
-            handleManufacturerFilter={handleManufacturerFilter}
-            handleConditionFilter={handleConditionFilter}
-            handleSearchFilter={handleSearchFilter}
-          />
-        </Col>
-        <Col>
-          <div className="products-container">
-            {products?.length ? (
-              products.map((product) => (
-                <ItemCard
-                  title={product.details.title}
-                  description={product.details.description}
-                  image={product.details.image}
-                  itemLink={`/producto/${product.id}`}
-                  location={product.details.location}
-                  phone={product.details.phone}
-                  email={product.details.email}
-                />
-              ))
-            ) : (
-              <div>No hay productos</div>
-            )}
-          </div>
-        </Col>
-      </Row>
+      <div className="search-products-container">
+        <ProductFilters
+          searchInputValue={searchInput}
+          country={data?.filters?.country}
+          condition={data?.filters?.condition}
+          manufacturers={data?.filters?.manufacturers}
+          handleUsFilter={handleUsFilter}
+          handleMxFilter={handleMxFilter}
+          handleManufacturerFilter={handleManufacturerFilter}
+          handleConditionFilter={handleConditionFilter}
+          handleSearchFilter={handleSearchFilter}
+        />
+        <div className="products-container">
+          {products?.length ? (
+            products.map((product) => (
+              <ItemCard
+                title={product.details.title}
+                description={product.details.description}
+                image={product.details.image}
+                itemLink={`/producto/${product.id}`}
+                location={product.details.location}
+                phone={product.details.phone}
+                email={product.details.email}
+              />
+            ))
+          ) : (
+            <div>No hay productos</div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

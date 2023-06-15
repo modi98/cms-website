@@ -13,7 +13,7 @@ const ItemCard = ({
   email,
 }) => {
   return (
-    <Card className="mt-4 w-100">
+    <Card className="w-100">
       <Row>
         <Col md={4}>
           <Image className="card-image-container" src={image} fluid />
